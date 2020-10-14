@@ -1,0 +1,11 @@
+.footer {
+  background: $middlegrey;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  > div:first-child {
+    margin-bottom: 1rem;
+  }
+}

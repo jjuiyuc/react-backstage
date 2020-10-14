@@ -1,0 +1,33 @@
+.b-navbar {
+  padding: 0 1rem;
+  background-color: $middlegrey;
+  letter-spacing: 0.1rem;
+  .brand-name {
+    margin-left: 1rem;
+  }
+  .navbar-links {
+    margin: 0 1rem;
+
+    .nav-link {
+      margin: 0 0.2rem;
+      padding: 1rem 0.8rem;
+      color: $sub-white !important ;
+    }
+    .nav-link:hover {
+      color: $black !important;
+      transition: ease-in-out 0.2s;
+    }
+    .nav-link:first-child:hover {
+      background-color: $light-gold;
+    }
+    .nav-link:nth-child(2):hover {
+      background-color: $light-green;
+    }
+    .nav-link:nth-child(3):hover {
+      background-color: $light-orange;
+    }
+    .nav-link:last-child:hover {
+      background-color: $light-blue;
+    }
+  }
+}
