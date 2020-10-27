@@ -9,6 +9,7 @@
     margin: 0 1rem;
 
     .nav-link {
+      // font-weight: 300 !important;
       margin: 0 0.2rem;
       padding: 1rem 0.8rem;
       color: $sub-white !important ;
@@ -28,6 +29,30 @@
     }
     .nav-link:last-child:hover {
       background-color: $light-blue;
+    }
+  }
+  .navbar-links-drop {
+    margin: 0 1rem;
+    .nav-drop-down {
+      margin: 0 0.2rem;
+      padding: 1rem 0.8rem;
+      color: $sub-white !important ;
+    }
+    .nav-drop-down:hover {
+      color: $black !important;
+      transition: ease-in-out 0.2s;
+      background-color: $light-grey !important;
+    }
+    .drop-down-menu {
+      padding: 0;
+      .drop-down-links {
+        padding: 1rem 0.5rem;
+        color: $black !important;
+      }
+      .drop-down-links:hover {
+        background-color: $light-grey !important;
+        color: $white !important ;
+      }
     }
   }
 }

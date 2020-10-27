@@ -33,21 +33,16 @@ const Navbar = () => {
             <CNavLink className="nav-link ">門診時間</CNavLink>
             <CNavLink className="nav-link ">衛教資訊</CNavLink>
           </CNavbarNav>
-          <CNavbarNav className="navbar-links ml-auto">
+          <CNavbarNav className="navbar-links-drop ml-auto">
             <CDropdown inNav>
-              <CDropdownToggle color="secondary">Lang</CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>TW</CDropdownItem>
-                <CDropdownItem>EN</CDropdownItem>
-                <CDropdownItem>CN</CDropdownItem>
-                <CDropdownItem>JP</CDropdownItem>
-              </CDropdownMenu>
-            </CDropdown>
-            <CDropdown inNav>
-              <CDropdownToggle color="primary">User</CDropdownToggle>
-              <CDropdownMenu>
-                <CDropdownItem>Account</CDropdownItem>
-                <CDropdownItem>Settings</CDropdownItem>
+              <CDropdownToggle className="nav-drop-down">User</CDropdownToggle>
+              <CDropdownMenu className="drop-down-menu">
+                <CDropdownItem className="drop-down-links">
+                  Account
+                </CDropdownItem>
+                <CDropdownItem className="drop-down-links">
+                  Settings
+                </CDropdownItem>
               </CDropdownMenu>
             </CDropdown>
           </CNavbarNav>

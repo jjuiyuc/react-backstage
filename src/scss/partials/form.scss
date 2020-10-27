@@ -1,0 +1,28 @@
+.form-page {
+  padding: 0 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+.form-section {
+  margin: 2rem 0 1rem;
+  width: 46%;
+  padding: 2rem 1rem 1rem;
+
+  .title {
+    margin: 0 1rem 2rem;
+    letter-spacing: 0.09rem;
+  }
+  .form {
+    div.field {
+      margin: 2rem 1rem;
+      flex-grow: 1;
+    }
+  }
+  &.dark {
+    color: $white;
+    input {
+      color: $white;
+      border-bottom: 1.5px solid $white;
+    }
+  }
+}

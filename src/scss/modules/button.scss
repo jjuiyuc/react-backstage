@@ -1,0 +1,31 @@
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.submit-button {
+  color: $orange;
+  border: 1px solid $orange;
+  padding: 0.8rem 2rem;
+  margin-bottom: 2rem;
+  width: 12rem;
+  text-align: center;
+  cursor: pointer;
+  &:hover,
+  &.signedUp {
+    color: $light-blue;
+    background: $orange;
+  }
+  &.dark {
+    border: 1px solid $blue;
+    color: $blue;
+    &:hover {
+      color: $middlegrey;
+      background: $blue;
+    }
+  }
+  &.small {
+    width: 6rem;
+  }
+}

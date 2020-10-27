@@ -4,16 +4,6 @@ export const testEmailRegExp = (str) => {
   return emailRegExp.test(str);
 };
 
-export const testLineIdRegExp = (str) => {
-  const lineIdRegExp = /^[a-zA-Z0-9]{1,}$/;
-  return lineIdRegExp.test(str);
-};
-
-export const testPhoneRegExp = (str) => {
-  const phoneRegExp = /^[0-9]*$/;
-  return phoneRegExp.test(str);
-};
-
 export const testPasswordRegExp = (str) => {
   const passwordRegExp = /^[a-zA-Z0-9]{6,}$/;
   return passwordRegExp.test(str);

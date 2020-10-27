@@ -1,0 +1,14 @@
+.landing-page {
+  background-color: $sub-white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  video {
+    height: 100vh;
+  }
+  .login-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}
