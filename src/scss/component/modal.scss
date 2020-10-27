@@ -1,0 +1,52 @@
+.ReactModal__Overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  .login-modal {
+    position: relative;
+    background-color: rgba(185, 211, 220, 0.8);
+    padding: 2rem;
+    width: 42%;
+    border-radius: 0.5rem;
+
+    > .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 1.2rem;
+      height: 1.2em;
+    }
+    div.field {
+      margin: 2rem 0;
+    }
+    .a-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      &:hover {
+        color: $sub-white;
+      }
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+      .submit-button {
+        box-sizing: content-box;
+        width: 2.5rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        font-size: 1.2rem;
+        color: $orange;
+        border: 1px solid $orange;
+        &:hover {
+          background-color: $orange;
+          color: $sub-white;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
