@@ -1,0 +1,16 @@
+.btn-wrapper {
+  margin-top: 2rem;
+  .end-btn {
+    // width: 90px !important;
+    background-color: rgba(231, 231, 231, 0.4);
+    span {
+      letter-spacing: 0.1rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transition: ease-in 0.4;
+      background-color: $middlegrey;
+      color: white;
+    }
+  }
+}

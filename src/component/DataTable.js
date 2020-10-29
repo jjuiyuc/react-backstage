@@ -12,133 +12,128 @@ const DataTable = (props) => {
     {
       id: 0,
       name: "John Doe",
-      registered: "2018/01/01",
-      role: "Guest",
-      status: "Pending",
+      startDate: "2018-01-01 09:00",
+      endDate: "2018-01-01 09:00",
+      status: "已結束",
     },
     {
       id: 1,
       name: "Samppa Nori",
-      registered: "2018/01/01",
-      role: "Member",
-      status: "Active",
+      startDate: "2018-01-01 09:00",
+      endDate: "2018-01-01 09:00",
+      status: "進行中的活動",
     },
     {
       id: 2,
       name: "Estavan Lykos",
-      registered: "2018/02/01",
-      role: "Staff",
-      status: "Banned",
+      startDate: "2018-01-01 09:00",
+      endDate: "2018-01-01 09:00",
+      status: "已結束",
     },
     {
       id: 3,
       name: "Chetan Mohamed",
-      registered: "2018/02/01",
-      role: "Admin",
-      status: "Inactive",
+      startDate: "2018-02-01 10:00",
+      endDate: "2018-01-01 09:00",
+
+      status: "已結束",
     },
     {
       id: 4,
       name: "Derick Maximinus",
-      registered: "2018/03/01",
-      role: "Member",
-      status: "Pending",
+      startDate: "2018-03-01 10:00",
+      endDate: "2018-01-01 09:00",
+
+      status: "已結束",
     },
     {
       id: 5,
       name: "Friderik Dávid",
-      registered: "2018/01/21",
-      role: "Staff",
-      status: "Active",
+      startDate: "2020-01-21 13:00",
+      endDate: "2018-01-01 09:00",
+      status: "進行中的活動",
     },
     {
       id: 6,
       name: "Yiorgos Avraamu",
-      registered: "2018/01/01",
-      role: "Member",
-      status: "Active",
+      startDate: "2020-01-21 13:00",
+      endDate: "2018-01-01 09:00",
+      status: "進行中的活動",
     },
     {
       id: 7,
       name: "Avram Tarasios",
-      registered: "2018/02/01",
-      role: "Staff",
-      status: "Banned",
+      startDate: "2020-03-21 13:00",
+      endDate: "2018-01-01 09:00",
+      status: "進行中的活動",
     },
     {
       id: 8,
       name: "Quintin Ed",
-      registered: "2018/02/01",
-      role: "Admin",
-      status: "Inactive",
+      startDate: "2018/02/01 11:00",
+      endDate: "2018-01-01 09:00",
+      status: "已結束",
     },
     {
       id: 9,
       name: "Enéas Kwadwo",
-      registered: "2018/03/01",
-      role: "Member",
-      status: "Pending",
+      startDate: "2020-09-03 14:00",
+      endDate: "2018-01-01 09:00",
+      status: "已結束",
     },
     {
       id: 10,
       name: "Agapetus Tadeáš",
-      registered: "2018/01/21",
-      role: "Staff",
-      status: "Active",
+      startDate: "2018/01/21",
+      endDate: "2018-01-01 09:00",
+      status: "進行中的活動",
     },
     {
       id: 11,
       name: "Carwyn Fachtna",
-      registered: "2018/01/01",
-      role: "Member",
-      status: "Active",
+      startDate: "2018/01/01",
+      endDate: "2018-01-01 09:00",
+      status: "進行中的活動",
     },
     {
       id: 12,
       name: "Nehemiah Tatius",
-      registered: "2018/02/01",
-      role: "Staff",
-      status: "Banned",
-    },
-    {
-      id: 13,
-      name: "Ebbe Gemariah",
-      registered: "2018/02/01",
-      role: "Admin",
-      status: "Inactive",
-    },
-    {
-      id: 14,
-      name: "Eustorgios Amulius",
-      registered: "2018/03/01",
-      role: "Member",
-      status: "Pending",
+      startDate: "2018/02/01",
+      endDate: "2018-01-01 09:00",
+      status: "已結束",
     },
   ];
   const [details, setDetails] = useState([]);
   // const [items, setItems] = useState(usersData)
 
-  const toggleDetails = (index) => {
-    const position = details.indexOf(index);
-    let newDetails = details.slice();
-    if (position !== -1) {
-      newDetails.splice(position, 1);
-    } else {
-      newDetails = [...details, index];
-    }
-    setDetails(newDetails);
-  };
+  // const toggleDetails = (index) => {
+  //     const position = details.indexOf(index);
+  //     let newDetails = details.slice();
+  //     if (position !== -1) {
+  //         newDetails.splice(position, 1);
+  //     } else {
+  //         newDetails = [...details, index];
+  //     }
+  //     setDetails(newDetails);
+  // };
 
   const fields = [
-    { key: "name", _style: { width: "25%" } },
-    { key: "registered", _style: { width: "20%" } },
-    { key: "registered", _style: { width: "20%" } },
-    { key: "role", _style: { width: "14%" } },
+    { key: "name", _style: { width: "26%" } },
+    { key: "startDate", _style: { width: "16%" } },
+    { key: "endDate", _style: { width: "16%" } },
     { key: "status", _style: { width: "14%" } },
+    // { key: "role", _style: { width: "14%" } },
     {
-      key: "show_details",
+      key: "edit_details",
       label: "",
-      _style: { width: "2%" },
+      _style: { width: "10%" },
+      sorter: false,
+      filter: false,
+    },
+    {
+      key: "delete_details",
+      label: "",
+      _style: { width: "8%" },
       sorter: false,
       filter: false,
     },
@@ -146,14 +141,11 @@ const DataTable = (props) => {
 
   const getBadge = (status) => {
     switch (status) {
-      case "Active":
+      case "進行中的活動":
         return "success";
-      case "Inactive":
+      case "已結束":
         return "secondary";
-      case "Pending":
-        return "warning";
-      case "Banned":
-        return "danger";
+
       default:
         return "primary";
     }
@@ -164,9 +156,9 @@ const DataTable = (props) => {
       <CDataTable
         items={usersData}
         fields={fields}
-        columnFilter
+        // columnFilter
         tableFilter
-        footer
+        // footer
         itemsPerPageSelect
         itemsPerPage={5}
         hover
@@ -178,39 +170,63 @@ const DataTable = (props) => {
               <CBadge color={getBadge(item.status)}>{item.status}</CBadge>
             </td>
           ),
-          show_details: (item, index) => {
+          edit_details: (item, index) => {
             return (
               <td className="py-2">
                 <CButton
                   color="primary"
                   variant="outline"
                   shape="square"
-                  size="sm"
-                  onClick={() => {
-                    toggleDetails(index);
-                  }}
+                  size=""
+                  // onClick={() => {
+                  //     toggleDetails(index);
+                  // }}
                 >
-                  {details.includes(index) ? "Hide" : "Show"}
+                  編 輯 {/* {details.includes(index) ? "Hide" : "Show"} */}
                 </CButton>
               </td>
             );
           },
-          details: (item, index) => {
+          delete_details: (item, index) => {
             return (
-              <CCollapse show={details.includes(index)}>
-                <CCardBody>
-                  <h4>{item.username}</h4>
-                  <p className="text-muted">User since: {item.registered}</p>
-                  <CButton size="sm" color="info">
-                    User Settings
-                  </CButton>
-                  <CButton size="sm" color="danger" className="ml-1">
-                    Delete
-                  </CButton>
-                </CCardBody>
-              </CCollapse>
+              <td className="py-2">
+                <CButton
+                  color="danger"
+                  variant="outline"
+                  shape="square"
+                  size=""
+                  // onClick={() => {
+                  //     toggleDetails(index);
+                  // }}
+                >
+                  刪 除 {/* {details.includes(index) ? "Hide" : "Show"} */}
+                </CButton>
+              </td>
             );
           },
+          // details: (item, index) => {
+          //     return (
+          //         <CCollapse show={details.includes(index)}>
+          //             <CCardBody>
+          //                 {/* <h4>{item.username}</h4>
+          //                 <p className="text-muted">
+          //                     User since: {item.startDate}
+          //                 </p> */}
+          //                 <CButton size="" color="info">
+          //                     Edit
+          //                 </CButton>
+          //                 <CButton
+          //                     size=""
+          //                     color="danger"
+          //                     variant="outline"
+          //                     className="ml-1"
+          //                 >
+          //                     Delete
+          //                 </CButton>
+          //             </CCardBody>
+          //         </CCollapse>
+          //     );
+          // },
         }}
       />
     </>
