@@ -21,7 +21,6 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border-right: 3.5px solid $orange;
   // background: $mint;
   &.dark {
     border-right: 3.5px solid $light-green;
@@ -107,7 +106,7 @@ a {
   min-height: calc(100vh - 100px);
 }
 .main-container {
-  width: 1440px;
+  width: 1140px;
   max-width: 100%;
   margin: 0 auto;
   border: 2px solid rgb(72, 124, 202);

@@ -2,8 +2,6 @@ import React, { Fragment, useState } from "react";
 import Modal from "react-modal";
 import queryString from "query-string";
 import { Link } from "react-router-dom";
-// import { BrandDesc } from "@component";
-import { isMobile } from "react-device-detect";
 import { useHistory } from "react-router-dom";
 import { setToken, useInput, toastError, apiCall } from "@util";
 

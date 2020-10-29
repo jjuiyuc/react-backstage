@@ -6,7 +6,7 @@ import MainRoute from "./main";
 //component
 import { Navbar } from "@component";
 import { MainContent } from "@component";
-import { Footer } from "@component";
+// import { Footer } from "@component";
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
             <Route path="/" component={MainRoute} />
           </Switch>
         </MainContent>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
       <ToastContainer
         position="top-center"
