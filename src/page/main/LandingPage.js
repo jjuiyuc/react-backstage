@@ -12,16 +12,16 @@ const LandingPage = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
-  const savedAccount = localStorage.getItem("account") || "";
+  const savedUsername = localStorage.getItem("username") || "";
   const [hint, setHint] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const [account, accountInput] = useInput({
+  const [username, usernameInput] = useInput({
     type: "text",
-    defaultValue: savedAccount,
+    defaultValue: savedUsername,
   });
   const [password, passwordInput] = useInput({ type: "password" });
-  const isFilled = account && password;
+  const isFilled = username && password;
   const submit = () => {
     if (isClicked) return; // prevent multiple clicks
     setIsSubmitted(true);
@@ -29,7 +29,7 @@ const LandingPage = () => {
     setHint("");
     const onSuccess = (data) => {
       const { fbclid, completed, api_token } = data;
-      localStorage.setItem("account", account);
+      localStorage.setItem("username", username);
       const queryStr = queryString.stringify({ fbclid });
       setToken(api_token);
       if (!completed) history.push(`/incomplete?${queryStr}`);
@@ -39,7 +39,7 @@ const LandingPage = () => {
       toastError(err);
       setIsClicked(false);
     };
-    const data = { account, password };
+    const data = { username, password };
     apiCall({ url: "auth", method: "post", data, onSuccess, onError });
   };
   return (
@@ -62,9 +62,9 @@ const LandingPage = () => {
             X
           </div>
           <div className="field font-en font-bold font-secondary">
-            Account
+            Username
             <div className="input-container">
-              {accountInput} <label for="text" class="label-name"></label>
+              {usernameInput} <label for="text" class="label-name"></label>
             </div>
           </div>
           <div className="field font-en font-bold font-secondary">

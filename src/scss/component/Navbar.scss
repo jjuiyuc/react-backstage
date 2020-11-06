@@ -4,6 +4,10 @@
   letter-spacing: 0.1rem;
   .brand-name {
     margin-left: 1rem;
+    .brand-link {
+      text-decoration: none;
+      color: $white;
+    }
   }
   .navbar-links {
     margin: 0 1rem;

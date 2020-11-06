@@ -29,18 +29,82 @@
     width: 6rem;
   }
 }
+
+.btn-gold {
+  background-color: rgba(248, 224, 142, 0.3);
+  &:hover {
+    background-color: $gold;
+    color: white;
+  }
+}
+
+.btn-green {
+  background-color: rgba(191, 204, 128, 0.3);
+  &:hover {
+    color: white;
+  }
+}
+
+.btn-orange {
+  background-color: #ecc3b2;
+  &:hover {
+    background-color: $orange;
+    color: white;
+  }
+}
+
+.btn-blue {
+  background-color: #b9d3dc;
+  &:hover {
+    background-color: $blue;
+    color: white;
+  }
+}
+
 .btn-wrapper {
   margin-top: 2rem;
-  .end-btn {
+  .add-btn {
     // width: 90px !important;
-    background-color: rgba(180, 180, 180, 0.4);
     span {
       letter-spacing: 0.1rem;
       font-weight: 700;
     }
     &:hover {
       transition: ease-in 0.4;
-      background-color: $middlegrey;
+      color: white;
+    }
+  }
+}
+
+.btn-wrapper {
+  margin-top: 2.8rem;
+  .end-btn {
+    text-decoration: underline;
+    // border-bottom: slategrey solid 1px;
+    span {
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+    }
+    &:hover {
+      transition: ease-in 0.4;
+      background-color: rgba(85, 85, 85, 0.7);
+      color: white;
+    }
+  }
+}
+
+.btn-wrapper-mid {
+  margin: 2rem 0 1rem;
+  flex-direction: row-reverse;
+  .edit-btn {
+    background-color: rgba(248, 224, 142, 0.3);
+    span {
+      letter-spacing: 0.1rem;
+      font-weight: 700;
+    }
+    &:hover {
+      transition: ease-in 0.4;
+      background-color: $gold;
       color: white;
     }
   }

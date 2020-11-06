@@ -14,7 +14,6 @@ import {
   CNavLink,
   CToggler,
 } from "@coreui/react";
-// import { NavbarMenuItem } from "@component";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +29,9 @@ const Navbar = () => {
         <CNavbar expandable="sm" className="b-navbar">
           <CToggler inNavbar onClick={() => setIsOpen(!isOpen)} />
           <CNavbarBrand className="brand-name font-rob">
-            HuaYu Fertility Center
+            <Link to="/" className="brand-link">
+              HuaYu Fertility Center
+            </Link>
           </CNavbarBrand>
 
           <CCollapse show={isOpen} navbar>
@@ -46,10 +47,6 @@ const Navbar = () => {
                   </CNavLink>
                 );
               })}
-              {/* <CNavLink className="nav-link ">最新消息</CNavLink>
-                            <CNavLink className="nav-link ">活動資訊</CNavLink>
-                            <CNavLink className="nav-link ">門診時間</CNavLink>
-                            <CNavLink className="nav-link ">衛教資訊</CNavLink> */}
             </CNavbarNav>
             <CNavbarNav className="navbar-links-drop ml-auto">
               <CDropdown inNav>

@@ -6,22 +6,6 @@
       padding-top: 0.8rem;
       letter-spacing: 0.08rem;
     }
-    .btn-wrapper {
-      margin-top: 2rem;
-      .add-btn {
-        // width: 90px !important;
-        background-color: rgba(248, 224, 142, 0.4);
-        span {
-          letter-spacing: 0.1rem;
-          font-weight: 700;
-        }
-        &:hover {
-          transition: ease-in 0.4;
-          background-color: $gold;
-          color: white;
-        }
-      }
-    }
   }
   .page-tabs {
     margin-top: 4rem;

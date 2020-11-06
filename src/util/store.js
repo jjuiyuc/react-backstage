@@ -5,4 +5,6 @@ export const ContextStore = React.createContext({
   setToken: () => {},
   member: {},
   setMember: () => {},
+  action: {},
+  setAction: () => {},
 });

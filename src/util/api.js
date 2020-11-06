@@ -32,3 +32,32 @@ export const apiCall = ({
 export const getToken = () => localStorage.getItem("at") || "";
 
 export const setToken = (token) => localStorage.setItem("at", token);
+
+// export const getAnnouncement = () => {
+//     return async function getUserInfoFromServer(dispatch) {
+//         const obj = await axios({
+//             url: "http://192.168.133.226:5000/api/v1/user/",
+//             method: "GET",
+//             headers: {
+//                 // 'Content-Type': 'application/json',
+//                 // Accept: 'application/json',
+//                 Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+//             },
+//         });
+//         dispatch({
+//             type: GET_USERLIST,
+//             payload: obj, //unconfirmed
+//         });
+//     };
+// };
+// export const getAnnouncement = () => {
+//     (async () => {
+//         const res = await axios({
+//             url: `http://54.238.13.73:5000/api/0.3.0/announcement/`,
+//             method: "GET",
+//         });
+//         const data = await res.json();
+
+//         return data;
+//     })();
+// };

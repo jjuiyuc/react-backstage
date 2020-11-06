@@ -14,14 +14,14 @@ const SignUpPage = () => {
   const history = useHistory();
   const [hint, setHint] = useState("");
   const [name, nameInput] = useInput({ type: "text" });
-  const [account, accountInput] = useInput({ type: "email" });
+  const [username, usernameInput] = useInput({ type: "email" });
   const [password, passwordInput] = useInput({ type: "password" });
   const [confirmPassword, confirmPasswordInput] = useInput({
     type: "password",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-  const isFilled = name && account && password;
+  const isFilled = name && username && password;
   const passwordValid = testPasswordRegExp(password);
   const passwordMatched =
     password && confirmPassword && password === confirmPassword;
@@ -37,7 +37,7 @@ const SignUpPage = () => {
     setIsClicked(true);
     const data = {
       name,
-      account,
+      username,
       password,
     };
     const onSuccess = () => {
@@ -70,13 +70,13 @@ const SignUpPage = () => {
               </div>
             </div>
 
-            <div className="field account">
+            <div className="field username">
               <div className="mt-s  mb-2 mx-1">
-                <span className="font-en">ACCOUNT</span>
+                <span className="font-en">USERNAME</span>
                 <span className="font-secondary"> 帳號</span>
               </div>
               <div className="input-container mx-1">
-                {accountInput}
+                {usernameInput}
                 <label for="text" class="label-name"></label>
               </div>
             </div>

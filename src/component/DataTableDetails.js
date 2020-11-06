@@ -1,98 +1,47 @@
 import React, { useState } from "react";
-import { CDataTable, CBadge, CButton, CCollapse } from "@coreui/react";
+import {
+  CDataTable,
+  CBadge,
+  CButton,
+  CCollapse,
+  CCardBody,
+} from "@coreui/react";
 
-const DataTable = (props) => {
+const DataTableDetails = (props) => {
   const usersData = [
     {
       id: 0,
-      name: "John Doe",
+      lang: "TW",
+      title: "John Doe",
+      content: "John Doe",
       startDate: "2018-01-01 09:00",
       endDate: "2018-01-01 09:00",
       status: "已結束",
     },
     {
       id: 1,
-      name: "Samppa Nori",
+      lang: "CN",
+      title: "Samppa Nori",
+      content: "John Doe",
       startDate: "2018-01-01 09:00",
       endDate: "2018-01-01 09:00",
       status: "進行中的活動",
     },
     {
       id: 2,
-      name: "Estavan Lykos",
+      lang: "EN",
+      title: "Estavan Lykos",
+      content: "John Doe",
       startDate: "2018-01-01 09:00",
       endDate: "2018-01-01 09:00",
       status: "已結束",
     },
     {
       id: 3,
-      name: "Chetan Mohamed",
+      lang: "JP",
+      title: "Chetan Mohamed",
+      content: "John Doe",
       startDate: "2018-02-01 10:00",
-      endDate: "2018-01-01 09:00",
-
-      status: "已結束",
-    },
-    {
-      id: 4,
-      name: "Derick Maximinus",
-      startDate: "2018-03-01 10:00",
-      endDate: "2018-01-01 09:00",
-
-      status: "已結束",
-    },
-    {
-      id: 5,
-      name: "Friderik Dávid",
-      startDate: "2020-01-21 13:00",
-      endDate: "2018-01-01 09:00",
-      status: "進行中的活動",
-    },
-    {
-      id: 6,
-      name: "Yiorgos Avraamu",
-      startDate: "2020-01-21 13:00",
-      endDate: "2018-01-01 09:00",
-      status: "進行中的活動",
-    },
-    {
-      id: 7,
-      name: "Avram Tarasios",
-      startDate: "2020-03-21 13:00",
-      endDate: "2018-01-01 09:00",
-      status: "進行中的活動",
-    },
-    {
-      id: 8,
-      name: "Quintin Ed",
-      startDate: "2018/02/01 11:00",
-      endDate: "2018-01-01 09:00",
-      status: "已結束",
-    },
-    {
-      id: 9,
-      name: "Enéas Kwadwo",
-      startDate: "2020-09-03 14:00",
-      endDate: "2018-01-01 09:00",
-      status: "已結束",
-    },
-    {
-      id: 10,
-      name: "Agapetus Tadeáš",
-      startDate: "2018/01/21",
-      endDate: "2018-01-01 09:00",
-      status: "進行中的活動",
-    },
-    {
-      id: 11,
-      name: "Carwyn Fachtna",
-      startDate: "2018/01/01",
-      endDate: "2018-01-01 09:00",
-      status: "進行中的活動",
-    },
-    {
-      id: 12,
-      name: "Nehemiah Tatius",
-      startDate: "2018/02/01",
       endDate: "2018-01-01 09:00",
       status: "已結束",
     },
@@ -112,25 +61,12 @@ const DataTable = (props) => {
   // };
 
   const fields = [
-    { key: "name", _style: { width: "26%" } },
-    { key: "startDate", _style: { width: "16%" } },
-    { key: "endDate", _style: { width: "16%" } },
+    { key: "lang", _style: { width: "2%" }, sorter: false },
+    { key: "title", _style: { width: "22%" } },
+    { key: "content", _style: { width: "32%" } },
+    { key: "startDate", _style: { width: "14%" } },
+    { key: "endDate", _style: { width: "14%" } },
     { key: "status", _style: { width: "14%" } },
-    // { key: "role", _style: { width: "14%" } },
-    {
-      key: "edit_details",
-      label: "",
-      _style: { width: "10%" },
-      sorter: false,
-      filter: false,
-    },
-    {
-      key: "delete_details",
-      label: "",
-      _style: { width: "8%" },
-      sorter: false,
-      filter: false,
-    },
   ];
 
   const getBadge = (status) => {
@@ -151,13 +87,12 @@ const DataTable = (props) => {
         items={usersData}
         fields={fields}
         // columnFilter
-        tableFilter
         // footer
-        itemsPerPageSelect
-        itemsPerPage={5}
+        // itemsPerPageSelect
+        itemsPerPage={4}
         hover
         sorter
-        pagination
+        // pagination
         scopedSlots={{
           status: (item) => (
             <td>
@@ -227,4 +162,4 @@ const DataTable = (props) => {
   );
 };
 
-export default DataTable;
+export default DataTableDetails;

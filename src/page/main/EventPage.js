@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+//component
 import {
   CTabs,
   CNav,
@@ -13,41 +13,26 @@ import {
   CButton,
 } from "@coreui/react";
 
-import axios from "axios";
 import { toastError, toastDark } from "@util";
 import { MainContainer, DataTable } from "@component";
 
-const AnnouncementPage = () => {
+const EventPage = () => {
   const history = useHistory();
-  const [announcementData, setAnnouncementData] = useState([]);
 
-  const add = () => history.push("/announcement/add");
-
-  // const getAnnouncement = () => {
-  //     (async () => {
-  //         const res = await axios({
-  //             url: `http://54.238.13.73:5000/api/0.3.0/announcement/`,
-  //             method: "GET",
-  //         });
-  //         const data = await res.json();
-
-  //         return data;
-  //     })();
-  // };
-
+  const add = () => history.push("/event/add");
   return (
     <>
       <MainContainer>
         <div className="announcement-container">
           <div className="page-head flex">
-            <div className="page-title font-primary">最新消息</div>
+            <div className="page-title font-primary">活動資訊</div>
 
             <div className="btn-wrapper">
               <CButton
                 variant="outline"
-                className="m-2 add-btn btn-gold"
+                className="m-2 add-btn btn-green"
                 size="lg"
-                color="warning"
+                color="success"
                 onClick={() => add()}
               >
                 <span className="font-en">新 增</span>
@@ -73,4 +58,4 @@ const AnnouncementPage = () => {
     </>
   );
 };
-export default AnnouncementPage;
+export default EventPage;

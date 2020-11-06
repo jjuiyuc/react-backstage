@@ -1,0 +1,17 @@
+@import "../modules";
+
+@mixin mq($width, $orientation: null) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $orientation {
+      @media only screen and (max-width: $width) and (orientation: $orientation) {
+        @content;
+      }
+    } @else {
+      @media only screen and (max-width: $width) {
+        @content;
+      }
+    }
+  }
+}

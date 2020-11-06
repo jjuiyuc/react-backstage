@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 import { CRow, CButton } from "@coreui/react";
 // import CIcon from "@coreui/icons-react";
 // import { freeSet } from "@coreui/icons";
-
+import {
+  MainContainer,
+  DataTableDetails,
+  DataTableDetailsEdit,
+} from "@component";
 import { useInput, toastError, toastDark } from "@util";
-import { MainContainer, DataTable } from "@component";
 
 const AnnouncementEditPage = () => {
   const history = useHistory();
@@ -43,17 +46,20 @@ const AnnouncementEditPage = () => {
                         /> */}
             <div className="btn-wrapper">
               <CButton
-                variant="outline"
+                // variant="outline"
                 className="m-2 end-btn "
-                size="lg"
+                shape="square"
+                size=""
                 onClick={add}
               >
                 <span className="font-en">結束活動</span>
               </CButton>
             </div>
           </div>
+
           <div className="page-tabs">
-            <DataTable />
+            {/* <DataTableDetails /> */}
+            <DataTableDetailsEdit />
           </div>
         </div>
       </MainContainer>
