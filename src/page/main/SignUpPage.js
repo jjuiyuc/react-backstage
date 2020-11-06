@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Footer, Radio } from "@component";
 import {
   apiCall,
   testPasswordRegExp,

@@ -48,6 +48,17 @@ const DataTableDetailsEdit = (props) => {
     },
   ];
 
+  const editData = [
+    {
+      lang: "",
+      title: "",
+      content: "",
+      startDate: "",
+      endDate: "",
+      status: "",
+    },
+  ];
+
   const [details, setDetails] = useState([]);
   const [items, setItems] = useState(usersData);
 
@@ -63,16 +74,31 @@ const DataTableDetailsEdit = (props) => {
   };
 
   const fields = [
-    { key: "lang", _style: { width: "2%" }, sorter: false },
+    { key: "lang", _style: { width: "1%" }, sorter: false },
     { key: "title", _style: { width: "22%" } },
     { key: "content", _style: { width: "32%" } },
     { key: "startDate", _style: { width: "14%" } },
     { key: "endDate", _style: { width: "14%" } },
-    { key: "status", _style: { width: "14%" } },
+    { key: "status", _style: { width: "12%" } },
     {
       key: "edit_details",
       label: "",
-      _style: { width: "1%" },
+      _style: { width: "4%" },
+      sorter: false,
+      filter: false,
+    },
+  ];
+  const fields2 = [
+    { key: "lang", _style: { width: "1.5%" }, sorter: false },
+    { key: "title", _style: { width: "22%" } },
+    { key: "content", _style: { width: "32%" } },
+    { key: "startDate", _style: { width: "14%" } },
+    { key: "endDate", _style: { width: "14%" } },
+    { key: "status", _style: { width: "12%" } },
+    {
+      key: "finish_details",
+      label: "",
+      _style: { width: "4%" },
       sorter: false,
       filter: false,
     },
@@ -129,7 +155,7 @@ const DataTableDetailsEdit = (props) => {
                     toggleDetails(index);
                   }}
                 >
-                  編 輯{details.includes(index) ? "Hide" : "Show"}
+                  {details.includes(index) ? "Finish" : "Edit"}
                 </CButton>
               </td>
             );
@@ -138,43 +164,43 @@ const DataTableDetailsEdit = (props) => {
           details: (item, index) => {
             return (
               <CCollapse show={details.includes(index)}>
-                <CCardBody>
-                  <CDataTable
-                    items={usersData}
-                    fields={fields}
-                    itemsPerPage={1}
-                    scopedSlots={{
-                      status: (item) => (
-                        <td>
-                          <CSwitch
-                            labelOn={setSwitchOn}
-                            // key={key}
-                            color="secondary"
-                            checked
-                            // value={color}
-                          />
+                {/* <CCardBody> */}
+                <CDataTable
+                  items={editData}
+                  fields={fields2}
+                  itemsPerPage={1}
+                  scopedSlots={{
+                    status: (item) => (
+                      <td>
+                        <CSwitch
+                          labelOn={setSwitchOn}
+                          // key={key}
+                          color="secondary"
+                          checked
+                          // value={color}
+                        />
+                      </td>
+                    ),
+                    finish_details: (item, index) => {
+                      return (
+                        <td className="py-2">
+                          <CButton
+                            color="info"
+                            variant="outline"
+                            shape="square"
+                            size=""
+                            //   onClick={() => {
+                            //     toggleDetails(index);
+                            //   }}
+                          >
+                            Submit
+                          </CButton>
                         </td>
-                      ),
-                      edit_details: (item, index) => {
-                        return (
-                          <td className="py-2">
-                            <CButton
-                              color="primary"
-                              variant="outline"
-                              shape="square"
-                              size=""
-                              onClick={() => {
-                                toggleDetails(index);
-                              }}
-                            >
-                              編 輯{details.includes(index) ? "Hide" : "Show"}
-                            </CButton>
-                          </td>
-                        );
-                      },
-                    }}
-                  />
-                </CCardBody>
+                      );
+                    },
+                  }}
+                />
+                {/* </CCardBody> */}
               </CCollapse>
             );
           },

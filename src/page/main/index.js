@@ -26,6 +26,7 @@ const MainRoute = () => {
       <Route exact path="/announcement/add" component={AnnouncementAddPage} />
       <Route
         // path="/announcement/:announcementId?/edit"
+        exact
         path="/announcement/edit"
         component={AnnouncementEditPage}
       />

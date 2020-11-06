@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import {
   CDataTable,
   CBadge,
@@ -8,6 +10,9 @@ import {
 } from "@coreui/react";
 
 const DataTableDetails = (props) => {
+  const history = useHistory();
+  const edit = () => history.push("/announcement/edit");
+
   const usersData = [
     {
       id: 0,
@@ -80,19 +85,14 @@ const DataTableDetails = (props) => {
         return "primary";
     }
   };
-
   return (
     <>
       <CDataTable
         items={usersData}
         fields={fields}
-        // columnFilter
-        // footer
-        // itemsPerPageSelect
         itemsPerPage={4}
         hover
         sorter
-        // pagination
         scopedSlots={{
           status: (item) => (
             <td>
@@ -107,11 +107,9 @@ const DataTableDetails = (props) => {
                   variant="outline"
                   shape="square"
                   size=""
-                  // onClick={() => {
-                  //     toggleDetails(index);
-                  // }}
+                  onClick={() => edit()}
                 >
-                  編 輯 {/* {details.includes(index) ? "Hide" : "Show"} */}
+                  編 輯{" "}
                 </CButton>
               </td>
             );
@@ -124,38 +122,12 @@ const DataTableDetails = (props) => {
                   variant="outline"
                   shape="square"
                   size=""
-                  // onClick={() => {
-                  //     toggleDetails(index);
-                  // }}
                 >
-                  刪 除 {/* {details.includes(index) ? "Hide" : "Show"} */}
+                  刪 除{" "}
                 </CButton>
               </td>
             );
           },
-          // details: (item, index) => {
-          //     return (
-          //         <CCollapse show={details.includes(index)}>
-          //             <CCardBody>
-          //                 {/* <h4>{item.username}</h4>
-          //                 <p className="text-muted">
-          //                     User since: {item.startDate}
-          //                 </p> */}
-          //                 <CButton size="" color="info">
-          //                     Edit
-          //                 </CButton>
-          //                 <CButton
-          //                     size=""
-          //                     color="danger"
-          //                     variant="outline"
-          //                     className="ml-1"
-          //                 >
-          //                     Delete
-          //                 </CButton>
-          //             </CCardBody>
-          //         </CCollapse>
-          //     );
-          // },
         }}
       />
     </>

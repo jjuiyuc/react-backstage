@@ -1,10 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-//component
 import { CRow, CButton } from "@coreui/react";
-// import CIcon from "@coreui/icons-react";
-// import { freeSet } from "@coreui/icons";
 import {
   MainContainer,
   DataTableDetails,
@@ -58,7 +55,6 @@ const AnnouncementEditPage = () => {
           </div>
 
           <div className="page-tabs">
-            {/* <DataTableDetails /> */}
             <DataTableDetailsEdit />
           </div>
         </div>
