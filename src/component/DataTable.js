@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CDataTable, CBadge, CButton, CCollapse } from "@coreui/react";
+import { apiCall } from "@util";
 
 const DataTable = (props) => {
   const usersData = [
@@ -98,6 +99,7 @@ const DataTable = (props) => {
     },
   ];
   const [details, setDetails] = useState([]);
+  const [data, setData] = useState([]);
   // const [items, setItems] = useState(usersData)
 
   // const toggleDetails = (index) => {
@@ -111,6 +113,15 @@ const DataTable = (props) => {
   //     setDetails(newDetails);
   // };
 
+  useEffect(() => {
+    apiCall({
+      url: "announcement",
+      onSuccess: (d) => {
+        setData(d);
+      },
+    });
+  }, []);
+  console.log({ data });
   const fields = [
     { key: "name", _style: { width: "26%" } },
     { key: "startDate", _style: { width: "16%" } },

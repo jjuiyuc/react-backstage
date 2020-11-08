@@ -9,6 +9,7 @@ import {
   CCardBody,
   CSwitch,
 } from "@coreui/react";
+import { apiCall } from "@util";
 
 const DataTableDetailsEdit = (props) => {
   // const [editOpen, setEditOpen] = useState(false);
@@ -89,7 +90,7 @@ const DataTableDetailsEdit = (props) => {
     },
   ];
   const fields2 = [
-    { key: "lang", _style: { width: "1.5%" }, sorter: false },
+    { key: "lang", _style: { width: "1.5%" } },
     { key: "title", _style: { width: "22%" } },
     { key: "content", _style: { width: "32%" } },
     { key: "startDate", _style: { width: "14%" } },
@@ -110,7 +111,6 @@ const DataTableDetailsEdit = (props) => {
         return "success";
       case "已結束":
         return "secondary";
-
       default:
         return "primary";
     }
@@ -136,7 +136,6 @@ const DataTableDetailsEdit = (props) => {
         fields={fields}
         itemsPerPage={4}
         hover
-        sorter
         scopedSlots={{
           status: (item) => (
             <td>
@@ -169,6 +168,7 @@ const DataTableDetailsEdit = (props) => {
                   items={editData}
                   fields={fields2}
                   itemsPerPage={1}
+                  // header={false}
                   scopedSlots={{
                     status: (item) => (
                       <td>
